@@ -1,0 +1,12 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.local
+playwright-report/
+test-results/
+*.tsbuildinfo
+.DS_Store
+android/.gradle/
+android/local.properties
+dist-pages/

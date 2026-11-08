@@ -1,0 +1,9 @@
+{
+  "app.name": "Fitile",
+  "nav.today": "Today",
+  "nav.train": "Train",
+  "nav.food": "Food",
+  "nav.progress": "Progress",
+  "nav.profile": "Profile",
+  "common.demo": "Demo data · not synchronized"
+}

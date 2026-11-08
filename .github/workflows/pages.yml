@@ -1,4 +1,4 @@
-name: Publish Staywise
+name: Publish App Studio
 on:
   push:
     branches: [master]
@@ -10,7 +10,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 45
     permissions:
       contents: write
       pages: write
@@ -44,7 +44,7 @@ jobs:
             git commit -m "Persist validated public market snapshots and dependency lock"
             git push
           fi
-      - name: Build static website
+      - name: Build Staywise and app collection
         run: npm run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

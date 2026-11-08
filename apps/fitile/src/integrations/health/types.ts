@@ -1,0 +1,2 @@
+export type HealthRecord={sourceId:string;sourceName:string;type:'walking'|'running'|'treadmill'|'cycling'|'weight'|'steps';startedAt:string;minutes?:number;distanceMeters?:number;steps?:number;caloriesKcal?:number;weightKg?:number}
+export interface HealthImportAdapter{available():Promise<boolean>;requestPermissions(types:HealthRecord['type'][]):Promise<boolean>;readSince(cursor?:string):Promise<{records:HealthRecord[];cursor:string}>}

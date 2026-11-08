@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "apps": [
+    {
+      "slug": "staywise",
+      "title": "Staywise Berlin",
+      "mode": "external",
+      "label": "Market research",
+      "description": "Airbnb supply, review activity, location research and a practical first-host guide.",
+      "url": "../"
+    },
+    {
+      "slug": "immoledger",
+      "title": "ImmoLedger",
+      "mode": "local",
+      "label": "Property & tax",
+      "description": "Compare rental-property cash flow, financing, tax scenarios and cash needed before tax. Public defaults are illustrative; import your own JSON.",
+      "originalUrl": "https://immoledger-jj.senapati-jyotirmay.chatgpt.site",
+      "output": "dist",
+      "commands": [
+        [
+          "npm",
+          "test"
+        ],
+        [
+          "npm",
+          "run",
+          "check"
+        ]
+      ]
+    },
+    {
+      "slug": "aster",
+      "title": "Aster Portfolio",
+      "mode": "local",
+      "label": "Investment planning",
+      "description": "Track investments and projections locally with portable JSON backups. Account and vault services remain on the original hosted app.",
+      "originalUrl": "https://aster-portfolio-ledger.senapati-jyotirmay.chatgpt.site",
+      "output": "dist-pages",
+      "commands": [
+        [
+          "npm",
+          "ci",
+          "--no-audit",
+          "--no-fund"
+        ],
+        [
+          "npm",
+          "run",
+          "test:pages"
+        ]
+      ]
+    },
+    {
+      "slug": "fitile",
+      "title": "Fitile",
+      "mode": "local",
+      "label": "Fitness & recovery",
+      "description": "Explore the training tracker and keep local records with JSON backup and restore. Cloud sync needs a separately configured service.",
+      "originalUrl": "https://fittile.senapati-jyotirmay.chatgpt.site",
+      "output": "dist-pages",
+      "commands": [
+        [
+          "npm",
+          "ci",
+          "--no-audit",
+          "--no-fund"
+        ],
+        [
+          "npm",
+          "run",
+          "test:run"
+        ],
+        [
+          "npm",
+          "run",
+          "build:pages"
+        ]
+      ]
+    },
+    {
+      "slug": "pdf-manager",
+      "title": "PDF Manager",
+      "mode": "local",
+      "label": "Private document tools",
+      "description": "Process PDFs in this browser. The tool shell is public; selected documents stay in memory and are not saved to the repository.",
+      "originalUrl": "https://private-pdf-manager.senapati-jyotirmay.chatgpt.site",
+      "output": "dist-pages",
+      "commands": [
+        [
+          "npm",
+          "ci",
+          "--no-audit",
+          "--no-fund"
+        ],
+        [
+          "npm",
+          "run",
+          "test:pages"
+        ],
+        [
+          "npm",
+          "run",
+          "test:pdf"
+        ]
+      ]
+    },
+    {
+      "slug": "resin-rang",
+      "title": "रेज़िन रंग · Resin Rang",
+      "mode": "hosted-launch",
+      "label": "Live shop connection",
+      "description": "Open the original jewellery shop for its live catalogue, customer accounts, stock and orders. Those database features run on the original host.",
+      "originalUrl": "https://resin-rang-store.senapati-jyotirmay.chatgpt.site",
+      "output": "dist-pages",
+      "commands": [
+        [
+          "npm",
+          "run",
+          "build:pages"
+        ]
+      ]
+    },
+    {
+      "slug": "index",
+      "title": "App Directory",
+      "mode": "local",
+      "label": "App navigation",
+      "description": "A searchable directory of available apps and original hosted services.",
+      "originalUrl": "https://index.senapati-jyotirmay.chatgpt.site",
+      "output": "dist-pages",
+      "commands": [
+        [
+          "npm",
+          "run",
+          "build:pages"
+        ]
+      ]
+    },
+    {
+      "slug": "jyotirmay-sites-hub",
+      "title": "Sites Hub",
+      "mode": "local",
+      "label": "App navigation",
+      "description": "The second saved directory, preserved as a separate source project.",
+      "originalUrl": "https://jyotirmay-sites-hub.senapati-jyotirmay.chatgpt.site",
+      "output": "dist-pages",
+      "commands": [
+        [
+          "npm",
+          "run",
+          "build:pages"
+        ]
+      ]
+    },
+    {
+      "slug": "lohn-klar-2026",
+      "title": "LOHN/KLAR 2026",
+      "mode": "unavailable",
+      "label": "Source unavailable",
+      "description": "This salary-calculator project was registered without a saved source commit or published version. Its original implementation could not be recovered."
+    }
+  ]
+}

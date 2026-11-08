@@ -1,0 +1,16 @@
+.DS_Store
+.build/
+.swiftpm/
+dist/
+tmp/
+output/pdf/*
+!output/pdf/.gitkeep
+node_modules/
+.next/
+.vinext/
+.wrangler/
+*.tsbuildinfo
+.env
+.env.local
+
+dist-pages/

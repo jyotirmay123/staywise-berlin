@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "migrationDate": "2026-11-08",
+  "hosting": "github-pages",
+  "sourceBackup": {
+    "type": "sanitized-source",
+    "excluded": [
+      "secrets",
+      "environment-values",
+      "customer-data",
+      "orders-data",
+      "sessions-data",
+      "product-seed-rows",
+      "git-history"
+    ]
+  },
+  "deploymentStatus": "prepared",
+  "dataMigration": "No live database, media bucket, user accounts, or browser storage was exported.",
+  "appId": "index",
+  "originalUrl": "https://index.senapati-jyotirmay.chatgpt.site",
+  "publicPath": "/staywise-berlin/apps/index/",
+  "mode": "public-static-directory",
+  "backendRequired": [],
+  "capabilities": {
+    "static": [
+      "Public app gallery",
+      "Search and category filters",
+      "Original and GitHub edition links"
+    ],
+    "originalSite": [
+      "ChatGPT identity gate and personalized account header"
+    ]
+  },
+  "limitations": [
+    "Public directory deliberately omits the private account header and identity details.",
+    "Original applications retain their own access requirements."
+  ],
+  "entries": [
+    {
+      "id": "immoledger",
+      "title": "ImmoLedger",
+      "category": "Property",
+      "symbol": "IM",
+      "accent": "blue",
+      "description": "A focused workspace for property records and rental finances.",
+      "originalUrl": "https://immoledger-jj.senapati-jyotirmay.chatgpt.site",
+      "publicPath": "/staywise-berlin/apps/immoledger/"
+    },
+    {
+      "id": "aster",
+      "title": "Aster Portfolio",
+      "category": "Finance",
+      "symbol": "AS",
+      "accent": "violet",
+      "description": "Offline-first EUR and INR investment portfolio tracking with historical FX and projections.",
+      "originalUrl": "https://aster-portfolio-ledger.senapati-jyotirmay.chatgpt.site",
+      "publicPath": "/staywise-berlin/apps/aster/"
+    },
+    {
+      "id": "fitile",
+      "title": "Fitile",
+      "category": "Wellbeing",
+      "symbol": "FT",
+      "accent": "green",
+      "description": "A personal fitness and wellbeing app.",
+      "originalUrl": "https://fittile.senapati-jyotirmay.chatgpt.site",
+      "publicPath": "/staywise-berlin/apps/fitile/"
+    },
+    {
+      "id": "pdf-manager",
+      "title": "PDF Manager",
+      "category": "Productivity",
+      "symbol": "PDF",
+      "accent": "blue",
+      "description": "Browser tools for working with PDFs. Open the edition you need for available tools.",
+      "originalUrl": "https://private-pdf-manager.senapati-jyotirmay.chatgpt.site",
+      "publicPath": "/staywise-berlin/apps/pdf-manager/"
+    },
+    {
+      "id": "resin-rang",
+      "title": "रेज़िन रंग",
+      "category": "Shop",
+      "symbol": "रं",
+      "accent": "rose",
+      "description": "Handmade resin jewellery and gifts. The GitHub edition introduces the shop and links to the original store for purchases.",
+      "originalUrl": "https://resin-rang-store.senapati-jyotirmay.chatgpt.site",
+      "publicPath": "/staywise-berlin/apps/resin-rang/"
+    },
+    {
+      "id": "index",
+      "title": "Sites Index",
+      "category": "Directory",
+      "symbol": "IX",
+      "accent": "green",
+      "description": "A public directory of the app collection, with links to original sites and GitHub editions.",
+      "originalUrl": "https://index.senapati-jyotirmay.chatgpt.site",
+      "publicPath": "/staywise-berlin/apps/index/"
+    },
+    {
+      "id": "jyotirmay-sites-hub",
+      "title": "Jyotirmay Sites Hub",
+      "category": "Directory",
+      "symbol": "JS",
+      "accent": "violet",
+      "description": "The companion public hub for this collection of focused personal apps.",
+      "originalUrl": "https://jyotirmay-sites-hub.senapati-jyotirmay.chatgpt.site",
+      "publicPath": "/staywise-berlin/apps/jyotirmay-sites-hub/"
+    }
+  ]
+}

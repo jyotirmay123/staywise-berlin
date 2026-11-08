@@ -1,0 +1,49 @@
+.today-page { position: relative; }
+.avatar-button { width: 48px; height: 48px; flex: 0 0 auto; border: 2px solid var(--surface); border-radius: 50%; background: var(--ink); color: var(--surface); font-weight: 800; box-shadow: var(--shadow); }
+.demo-banner { width: fit-content; display: flex; align-items: center; gap: 7px; margin: -8px 0 18px; border-radius: 999px; background: var(--surface-soft); color: var(--ink-muted); padding: 7px 11px; font-size: 0.74rem; font-weight: 700; }
+.today-grid { display: grid; gap: 14px; }
+.workout-hero { min-height: 360px; display: flex; flex-direction: column; justify-content: space-between; padding: 24px; overflow: hidden; position: relative; }
+.workout-hero::after { content: ''; position: absolute; width: 260px; height: 260px; right: -100px; top: 34px; border: 48px solid rgba(187, 244, 75, 0.12); border-radius: 50%; }
+.workout-hero__topline, .card-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.workout-hero__topline span { display: inline-flex; align-items: center; gap: 6px; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.78; }
+.eyebrow--lime { color: var(--lime); }
+.workout-hero h2 { max-width: 520px; margin-bottom: 8px; font-family: var(--font-display); font-size: clamp(2.6rem, 12vw, 5.5rem); line-height: 0.9; letter-spacing: -0.055em; text-transform: uppercase; }
+.muscle-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.muscle-chips span { border: 1px solid rgba(255,255,255,0.25); border-radius: 999px; padding: 8px 11px; font-size: 0.74rem; font-weight: 700; }
+.workout-hero__actions { display: flex; gap: 8px; margin-top: 22px; }
+.workout-hero__actions .button--ghost { border-color: rgba(255,255,255,0.3); color: white; }
+.card-heading h2 { margin-bottom: 0; }
+.readiness-list { display: grid; gap: 13px; margin: 24px 0 18px; }
+.readiness-row { display: grid; grid-template-columns: 80px 1fr 42px; gap: 10px; align-items: center; font-size: 0.82rem; }
+.readiness-row strong { text-align: right; }
+.readiness-bar, .calorie-track { height: 8px; display: block; overflow: hidden; border-radius: 99px; background: var(--surface-soft); }
+.readiness-bar i, .calorie-track i { height: 100%; display: block; border-radius: inherit; background: var(--fresh); }
+.text-link { min-height: 44px; display: inline-flex; align-items: center; gap: 5px; border: 0; background: transparent; color: var(--brand); padding: 0; font-weight: 800; cursor: pointer; }
+.icon-tile { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 14px; background: var(--brand-soft); color: var(--brand); }
+.icon-tile--amber { background: color-mix(in srgb, var(--recovering), transparent 82%); color: var(--recovering); }
+.calorie-track { margin: 22px 0 18px; height: 10px; }
+.macro-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px; }
+.macro-grid div { display: grid; gap: 2px; }
+.macro-grid strong { font-size: 1.35rem; }
+.macro-grid strong span { font-size: 0.78rem; color: var(--ink-muted); }
+.macro-grid small { color: var(--ink-muted); }
+.mini-week { height: 76px; display: grid; grid-template-columns: repeat(7, 1fr); align-items: end; gap: 7px; margin-top: 20px; }
+.mini-week i { display: block; min-height: 8px; border-radius: 6px 6px 2px 2px; background: var(--surface-soft); }
+.mini-week i.current { background: var(--brand); }
+.week-labels { display: grid; grid-template-columns: repeat(7, 1fr); gap: 7px; margin-top: 7px; color: var(--ink-muted); text-align: center; font-size: 0.62rem; font-weight: 800; }
+.quick-add { position: fixed; z-index: 40; right: 24px; bottom: 96px; box-shadow: 0 12px 28px rgba(50, 92, 61, 0.28); }
+.today-disclaimer { margin: 18px 2px 0; }
+
+@media (min-width: 720px) {
+  .today-grid { grid-template-columns: repeat(2, 1fr); }
+  .workout-hero { grid-column: 1 / -1; }
+}
+
+@media (min-width: 1080px) {
+  .today-grid { grid-template-columns: 1.35fr 1fr 1fr; }
+  .workout-hero { grid-column: span 2; grid-row: span 2; }
+  .readiness-card { grid-column: 3; }
+  .nutrition-card { grid-column: 3; }
+  .activity-card { grid-column: 1 / -1; }
+  .quick-add { bottom: 28px; }
+}

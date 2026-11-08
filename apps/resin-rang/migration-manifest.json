@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "migrationDate": "2026-11-08",
+  "hosting": "github-pages",
+  "sourceBackup": {
+    "type": "sanitized-source",
+    "excluded": [
+      "secrets",
+      "environment-values",
+      "customer-data",
+      "orders-data",
+      "sessions-data",
+      "product-seed-rows",
+      "git-history"
+    ]
+  },
+  "deploymentStatus": "prepared",
+  "dataMigration": "No live database, media bucket, user accounts, or browser storage was exported.",
+  "appId": "resin-rang",
+  "originalUrl": "https://resin-rang-store.senapati-jyotirmay.chatgpt.site",
+  "publicPath": "/staywise-berlin/apps/resin-rang/",
+  "mode": "live-shop-launcher",
+  "backendRequired": [
+    {
+      "binding": "DB",
+      "provider": "Cloudflare D1",
+      "purpose": "Products, inventory, users, sessions, orders and order items"
+    },
+    {
+      "binding": "MEDIA",
+      "provider": "Cloudflare R2",
+      "purpose": "Product image upload and retrieval"
+    },
+    {
+      "binding": "ADMIN_EMAIL / ADMIN_PASSWORD",
+      "provider": "Server environment",
+      "purpose": "Admin authentication; values excluded"
+    }
+  ],
+  "capabilities": {
+    "static": [
+      "Brand and story",
+      "Product-category overview",
+      "Links to original shop, account and admin"
+    ],
+    "originalSite": [
+      "Catalog and inventory",
+      "Customer registration and login",
+      "Cart and order submission",
+      "COD or UPI follow-up selection",
+      "Customer order history",
+      "Admin products, stock, images and order status"
+    ]
+  },
+  "limitations": [
+    "GitHub Pages cannot execute the Cloudflare application backend.",
+    "Purchases, accounts, current prices and stock remain on the original shop.",
+    "UPI is an order payment preference with follow-up contact, not a payment gateway."
+  ]
+}

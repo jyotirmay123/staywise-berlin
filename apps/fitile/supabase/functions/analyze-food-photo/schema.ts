@@ -1,0 +1,2 @@
+import { z } from 'zod'
+export const FoodPhotoEstimateSchema=z.object({items:z.array(z.object({name:z.string().min(1),portion:z.string().min(1),grams:z.number().positive(),kcal:z.number().nonnegative(),proteinG:z.number().nonnegative(),carbohydrateG:z.number().nonnegative(),fatG:z.number().nonnegative(),confidence:z.number().min(0).max(1),assumption:z.string().min(1),micronutrients:z.record(z.string(),z.number().nonnegative()).optional()})).min(1),overallConfidence:z.enum(['low','medium','high']),estimated:z.literal(true)})

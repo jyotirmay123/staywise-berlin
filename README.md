@@ -1,3 +1,7 @@
+# Staywise and App Studio
+
+**[Open all apps](https://jyotirmay123.github.io/staywise-berlin/apps/)** · [Migration scope and data handling](APPS.md)
+
 # Staywise Berlin
 
 Interactive Airbnb market explorer and first-host business guide, published as a static GitHub Pages application.

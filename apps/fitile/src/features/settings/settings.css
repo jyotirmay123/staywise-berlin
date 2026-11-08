@@ -1,0 +1,21 @@
+.settings-tabs { display: flex; gap: 5px; width: fit-content; margin-bottom: 22px; border-radius: 999px; background: var(--surface-soft); padding: 5px; }
+.settings-tabs button { min-height: 42px; border: 0; border-radius: 999px; background: transparent; color: var(--ink-muted); padding: 0 16px; font-weight: 750; cursor: pointer; }
+.settings-tabs button[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
+.settings-grid { display: grid; gap: 14px; }
+.settings-grid .card { min-height: 190px; position: relative; }
+.settings-grid .card > .icon-tile { position: absolute; right: 20px; top: 20px; }
+.settings-section { max-width: 840px; }
+.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 12px; margin-bottom: 16px; }
+.equipment-list { display: grid; gap: 10px; }
+.equipment-row { min-height: 82px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px; box-shadow: none; }
+.equipment-row div { display: grid; gap: 4px; }
+.equipment-row small { color: var(--ink-muted); }
+.availability { min-height: 38px; border: 0; border-radius: 99px; background: var(--surface-soft); color: var(--ink-muted); padding: 0 12px; cursor: pointer; }
+.availability.active { background: var(--brand-soft); color: var(--brand-strong); }
+.inline-form { margin-top: 12px; display: grid; gap: 10px; }
+.inline-form input { min-height: 48px; border: 1px solid var(--line); border-radius: 12px; background: var(--canvas); color: var(--ink); padding: 0 13px; }
+.inline-form div { display: flex; justify-content: flex-end; gap: 8px; }
+.settings-signin-preview { grid-column: 1 / -1; }
+.settings-signin-preview .auth-page { min-height: auto; padding: 0; }
+@media(min-width:720px){.settings-grid{grid-template-columns:repeat(2,1fr)}.settings-wide{grid-column:1/-1}}
+.data-actions{display:flex;gap:8px;flex-wrap:wrap}.restore-message{border-radius:10px;background:var(--surface-soft);padding:10px;font-size:.75rem}.danger-zone{display:grid!important;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;min-height:auto!important}.danger-zone>svg{color:var(--fatigued)}

@@ -1,0 +1,4 @@
+import type { AccountSnapshot } from './createArchive'
+const cell=(value:unknown)=>{const text=value===undefined||value===null?'':typeof value==='object'?JSON.stringify(value):String(value);return /[",\n]/.test(text)?`"${text.replaceAll('"','""')}"`:text}
+const toCsv=(records:Record<string,unknown>[])=>{const headers=[...new Set(records.flatMap(Object.keys))];return [headers.map(cell).join(','),...records.map(record=>headers.map(header=>cell(record[header])).join(','))].join('\n')}
+export function createCsvBundle(snapshot:AccountSnapshot){return{'workouts.csv':toCsv(snapshot.workouts),'meals.csv':toCsv(snapshot.meals),'activities.csv':toCsv(snapshot.activities),'measurements.csv':toCsv(snapshot.measurements),'equipment.csv':toCsv(snapshot.equipment),'settings.csv':toCsv([snapshot.settings])}}

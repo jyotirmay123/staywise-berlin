@@ -1,0 +1,17 @@
+.onboarding-page { min-height: 100vh; display: grid; place-items: center; padding: 20px; }
+.onboarding-frame { width: min(760px, 100%); }
+.onboarding-header { display: flex; justify-content: space-between; align-items: center; color: var(--ink-muted); font-size: .8rem; }
+.onboarding-header .auth-brand { margin: 0; color: var(--ink); }
+.onboarding-progress { height: 5px; margin: 18px 0; overflow: hidden; border-radius: 9px; background: var(--surface-soft); }
+.onboarding-progress i { height: 100%; display: block; background: var(--brand); transition: width .2s ease; }
+.onboarding-card { min-height: 520px; display: flex; flex-direction: column; padding: clamp(24px, 6vw, 54px); }
+.choice-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; margin-top: 30px; }
+.choice { min-height: 66px; display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); color: var(--ink); padding: 14px 16px; text-align: left; font-weight: 750; cursor: pointer; }
+.choice.active { border-color: var(--brand); background: var(--brand-soft); color: var(--brand-strong); }
+.choice span { display: grid; gap: 4px; }
+.choice small { color: var(--ink-muted); font-weight: 500; }
+.onboarding-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: auto; padding-top: 28px; }
+.range-field { display: grid; gap: 16px; margin-top: 34px; }
+.range-field label { display: flex; justify-content: space-between; }
+.range-field input { width: 100%; accent-color: var(--brand); }
+@media (max-width: 520px) { .choice-grid { grid-template-columns: 1fr; } }

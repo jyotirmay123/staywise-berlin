@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Fitile</string>
+    <string name="title_activity_main">Fitile</string>
+    <string name="package_name">app.fittile.health</string>
+    <string name="custom_url_scheme">app.fittile.health</string>
+</resources>
