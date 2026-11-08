@@ -53,6 +53,7 @@ import {
   projectedValue,
 } from "@/lib/domain";
 import { localStore } from "@/lib/local-store";
+import { HostedPortfolioImport } from "@/components/hosted-import";
 import { parsePortfolioExport } from "@/lib/portable-data";
 import {
   type AccountSyncState,
@@ -850,13 +851,21 @@ export function PortfolioApp({ localOnly = false, appBase = "/" }: { localOnly?:
     file
       .text()
       .then(parsePortfolioExport)
-      .then((nextData) => {
+      .then(async (nextData) => {
         if (!window.confirm("Import replaces this browser’s portfolio. Export a backup first if needed. Continue?")) return;
-        saveData(nextData, "Portfolio imported.");
+        await importPortfolio(nextData);
       })
       .catch((error: unknown) =>
         notify(error instanceof Error ? error.message : "Import failed."),
       );
+  }
+
+  async function importPortfolio(nextData: PortfolioData): Promise<void> {
+    await localStore.importPortfolio(nextData);
+    dataRef.current = nextData;
+    setData(nextData);
+    queueCloudPush(nextData);
+    notify('Portfolio imported and saved on this device.');
   }
 
   function renderOverview() {
@@ -1509,7 +1518,7 @@ export function PortfolioApp({ localOnly = false, appBase = "/" }: { localOnly?:
                   <input
                     type="file"
                     accept="application/json"
-                    onChange={(event) => importFile(event.target.files?.[0])}
+                    onChange={(event) => { importFile(event.target.files?.[0]); event.target.value = ""; }}
                   />
                 </label>
               </div>
@@ -1636,6 +1645,7 @@ export function PortfolioApp({ localOnly = false, appBase = "/" }: { localOnly?:
             <Plus size={21} />
           </button>
         </div>
+        {localOnly && <HostedPortfolioImport currentData={data} onImport={importPortfolio} />}
         {content}
       </main>
 

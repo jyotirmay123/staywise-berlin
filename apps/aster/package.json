@@ -16,7 +16,7 @@
     "android:sync": "cap sync android",
     "android:apk": "cd android && ./gradlew assembleDebug",
     "build:pages": "vite build --config vite.pages.config.ts",
-    "test:pages": "npm run typecheck:pages && npm run build:pages && node --experimental-strip-types --test tests/domain.test.mjs tests/pages.test.mjs",
+    "test:pages": "npm run typecheck:pages && npm run build:pages && node --experimental-strip-types --test tests/domain.test.mjs tests/pages.test.mjs tests/hosted-transfer.test.mjs tests/receive-transfer.test.mjs tests/import-storage.test.mjs",
     "typecheck:pages": "tsc --project tsconfig.pages.json --noEmit"
   },
   "dependencies": {
@@ -40,6 +40,7 @@
     "drizzle-kit": "0.31.10",
     "eslint": "9.39.4",
     "eslint-config-next": "16.2.6",
+    "fake-indexeddb": "6.2.5",
     "react-server-dom-webpack": "19.2.6",
     "tailwindcss": "4.2.1",
     "typescript": "5.9.3",

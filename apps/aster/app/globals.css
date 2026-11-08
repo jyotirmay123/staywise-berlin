@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+.transfer-shell { margin: 0 auto; max-width: 820px; padding: 48px 20px; }
+.transfer-shell h1 { font-size: clamp(32px, 6vw, 48px); letter-spacing: -0.05em; line-height: 1.1; margin: 14px 0; }
+.transfer-shell header > p:last-child, .transfer-note { color: var(--muted); font-size: 14px; line-height: 1.6; }
+.transfer-panel { margin-top: 28px; }
+.transfer-panel h2 { margin-top: 0; }
+.transfer-candidates { display: grid; gap: 12px; margin: 20px 0; }
+.transfer-candidate { align-items: start; background: var(--white); border: 1px solid var(--line); border-radius: 12px; cursor: pointer; display: flex; gap: 12px; padding: 16px; }
+.transfer-candidate:has(input:checked) { border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink); }
+.transfer-candidate input { min-height: auto; margin-top: 5px; padding: 0; }
+.transfer-candidate > span { display: grid; font-size: 12px; gap: 7px; }
+.transfer-candidate strong { font-size: 15px; }
+.transfer-candidate small { background: var(--acid); border-radius: 5px; display: inline-block; font-size: 10px; margin-left: 5px; padding: 3px 5px; }
+.transfer-warnings { color: var(--danger); font-size: 12px; line-height: 1.6; padding-left: 18px; }
+.transfer-shell a { color: inherit; }
+.transfer-shell a.secondary-button { text-decoration: none; }
+
 :root {
   --ink: #10261f;
   --ink-soft: #274239;

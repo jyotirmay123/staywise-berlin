@@ -40,7 +40,32 @@ async function write<T>(key: string, value: T): Promise<void> {
   });
 }
 
+/** Backup and replacement commit together; aborting either write preserves the original portfolio. */
+async function importPortfolio(data: PortfolioData): Promise<void> {
+  const db = await openDatabase();
+  return new Promise((resolve, reject) => {
+    const transaction = db.transaction(STORE_NAME, 'readwrite');
+    const store = transaction.objectStore(STORE_NAME);
+    const current = store.get(DATA_KEY);
+    current.onsuccess = () => {
+      try {
+        const previous = current.result as PortfolioData | undefined;
+        if (previous && (previous.investments?.length || previous.valuations?.length)) store.put(previous, 'before-hosted-transfer');
+        store.put(data, DATA_KEY);
+      } catch (error) {
+        transaction.abort();
+        reject(error);
+      }
+    };
+    transaction.oncomplete = () => { db.close(); resolve(); };
+    transaction.onerror = () => { db.close(); reject(transaction.error ?? new Error('Import failed.')); };
+    transaction.onabort = () => { db.close(); reject(transaction.error ?? new Error('Import was not saved.')); };
+  });
+}
+
 export const localStore = {
+  importPortfolio,
+  loadImportBackup: (): Promise<PortfolioData | null> => read<PortfolioData>('before-hosted-transfer'),
   loadPortfolio: (): Promise<PortfolioData | null> =>
     read<PortfolioData>(DATA_KEY),
   savePortfolio: (data: PortfolioData): Promise<void> => write(DATA_KEY, data),

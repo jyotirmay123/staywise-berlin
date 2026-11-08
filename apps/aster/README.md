@@ -103,3 +103,14 @@ local records. Keep private JSON backups outside the public repository.
 
 All source defaults are empty. No private portfolio, browser database, exported
 backup, cloud credential, or cloud database is included in the published bundle.
+
+
+## Transfer your actual ChatGPT Aster portfolio
+
+Open the GitHub Pages app and select **Import from ChatGPT Aster**. The original private Site opens and uses your normal ChatGPT sign-in. It reads the full signed-in account copy, the current browser's original-site copy and any configured recovery vault, then displays record counts and edit/save timestamps. Choose a complete snapshot and click **Send to GitHub Aster**; return to the GitHub tab, review the counts, and select **Import this portfolio**.
+
+The receiver checks the exact source origin, opened window and a one-time session nonce, validates the portfolio, then atomically backs up the prior local portfolio and saves the incoming one before acknowledging success. No readable balances, account credentials, recovery keys or portfolio JSON are added to this public repository. Use **Download previous local backup** to recover the portfolio that preceded a replacement.
+
+If signing in breaks the popup connection or popups are blocked, open the original Site's `/transfer` page, download its selected JSON, then use **Settings → Import** on GitHub Aster. This fallback also backs up the previous portfolio before committing the replacement. The original Site remains private and its transfer page makes read-only cloud requests.
+
+Records saved only in another browser/device cannot be read here. Use that browser/device for the transfer, or export there first. The newest recorded content edit is the default choice; review timestamps because an old snapshot can be saved to a server later than a newer browser edit. Transferring uses a whole snapshot to preserve deletions. There is no automatic cross-host synchronization after import.
