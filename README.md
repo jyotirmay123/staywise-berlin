@@ -1,2 +1,5 @@
-# staywise-berlin
-Interactive Berlin, Spandau and Potsdam short-stay market explorer, startup guide and cash-flow planner. Static GitHub Pages app with versioned public data and portable JSON workspaces.
+# Staywise Berlin
+
+Static GitHub Pages migration of the Airbnb market explorer. The complete app and deployment workflow are being added in this migration.
+
+Market observations will be versioned JSON. Analyses use portable JSON workspaces. No private API credentials or paid datasets are included.
