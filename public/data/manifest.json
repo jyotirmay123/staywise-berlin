@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-11-08T03:51:23.738249+00:00",
+  "snapshots": [
+    {
+      "date": "2025-12-27",
+      "count": 14470,
+      "source": "https://data.insideairbnb.com/germany/be/berlin/2025-12-27/visualisations/listings.csv",
+      "sha256": "def5dd684382a5185443d8ab0f7018fdae69a8c61ddb7abcb2630e1ff73b6748"
+    },
+    {
+      "date": "2026-03-28",
+      "count": 5856,
+      "source": "https://data.insideairbnb.com/germany/be/berlin/2026-03-28/visualisations/listings.csv",
+      "sha256": "121529f8a792e24af438096369c86ba043eba6859deffa03045923defd6d991c"
+    },
+    {
+      "date": "2026-06-26",
+      "count": 12855,
+      "source": "https://data.insideairbnb.com/germany/be/berlin/2026-06-26/visualisations/listings.csv",
+      "sha256": "788771094f2462634c750f68444a1a4158d4e89da81c95dc2a21c09a3a238570"
+    },
+    {
+      "date": "2026-09-19",
+      "count": 12376,
+      "source": "https://data.insideairbnb.com/germany/be/berlin/2026-09-19/visualisations/listings.csv",
+      "sha256": "70ba56c86f2e4a58940d179e6528d0ec255e9d13752c299990a995603b1e1793"
+    }
+  ],
+  "coverage": "Berlin city archive only; no listing-level coverage for Potsdam or neighbouring Brandenburg towns.",
+  "attribution": "Inside Airbnb · CC BY 4.0; compacted and aggregated by Staywise",
+  "licence": "https://creativecommons.org/licenses/by/4.0/"
+}
