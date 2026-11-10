@@ -4,6 +4,21 @@ A browser-local German rental-property planner with an auditable calculation eng
 
 The public app starts with **fictional, clearly labeled demo data**. Property names, prices, loans, salary, payroll observations and budgets are illustrative. Enter your verified inputs or load a private JSON backup. Never commit your real financial backups to a public repository.
 
+
+## Shared data between both deployed sites
+
+Open **Sync data** on [ChatGPT ImmoLedger](https://immoledger-jj.senapati-jyotirmay.chatgpt.site/) or [GitHub Pages ImmoLedger](https://jyotirmay123.github.io/staywise-berlin/apps/immoledger/). Both use the same private [`jyotirmay123/immoledger`, `main:data/scenario.json`](https://github.com/jyotirmay123/immoledger/blob/main/data/scenario.json). The public `staywise-berlin` repository contains app code and fictional defaults only.
+
+1. Create a [fine-grained GitHub token](https://github.com/settings/personal-access-tokens/new). Select only the private **immoledger** repository and grant **Contents: Read and write**. Do not paste the token into chat or commit it.
+2. In the browser where your latest data already exists, open **Sync data**, enter the token, then **Connect GitHub**. Connecting alone does not change data. Review the available repository copy; select **Save this browser to repo** to publish your current complete scenario, or **Load repo data** to use the repository copy.
+3. Open the other deployment, connect with the same restricted token, then select **Load repo data**. Both now share that scenario. Each tab holds its token in memory only, so reconnect and choose the repository copy after reloading or reopening.
+4. Save forms as usual. Saved changes upload automatically after a short delay. A clean connected tab checks the repository every 30 seconds. Wait for **Synced with private repo** before closing. Unsaved forms and queued/failed uploads prevent background replacement.
+
+Loads retain a validated previous browser snapshot under `immoledger.sync.previous.v1`; **Download previous browser backup** recovers it. Manual **Download browser JSON** works without GitHub. Concurrent conflicting saves pause sync rather than overwriting newer data: download your local JSON, load repository data, then reapply your intended changes. Full snapshots preserve deletions; there is no field-by-field merge. Each repository save is also retained in Git history.
+
+Sync accepts existing local-server JSON, versioned portable backups and legacy scenarios; it saves a validated `{revision, scenario, savedAt}` JSON envelope. GitHub file SHA guards updates. Sync limits snapshots to 1 MB; manual JSON backups retain their existing limit. Tokens are never stored in browser persistence or shipped with the app. Offline/local-only use remains available, but those edits reach the other site only after reconnecting and publishing them.
+
+
 ## Run and verify
 
 Requires Python 3 for the local server and Node.js 22+ for tests.
