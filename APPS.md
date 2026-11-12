@@ -10,6 +10,7 @@ Each recovered project has independent editable source under `apps/<slug>/`. The
 | ImmoLedger | Property and tax calculator, illustrative defaults | Validated scenario JSON; local browser persistence |
 | Aster Portfolio | Local portfolio tools | IndexedDB and validated JSON backup; account/vault service remains on original host |
 | Fitile | Local training tracker | IndexedDB, browser state and validated JSON backup; optional cloud service requires separate configuration |
+| Rare Metals Lab | Historical evidence, DCA backtests and correlated Monte Carlo | Versioned public source histories; validated local settings and JSON/CSV export |
 | PDF Manager | Browser document tools | Documents remain in memory; no document persistence or upload |
 | Resin Rang | Branded launch page | Live products, stock, customer accounts and orders remain on original Worker/D1/R2 service |
 | App Directory / Sites Hub | Both saved directory projects | Versioned app metadata; local preferences where offered |

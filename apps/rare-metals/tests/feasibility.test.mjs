@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {minimumFeasibility} from '../src/data.mjs';
+test('saving plan that ends before minimum never claims to reach it',()=>{const r=minimumFeasibility({monthly:150,initial:0,contributionYears:5},10000);assert.equal(r.reached,false);assert.equal(r.totalPaid,9000);assert.equal(r.months,null);});
+test('initial amount can already satisfy minimum without monthly purchases',()=>{const r=minimumFeasibility({monthly:0,initial:10000,contributionYears:5},10000);assert.equal(r.reached,true);assert.equal(r.months,0);});
+test('feasible monthly plan reaches minimum within actual deposit period',()=>{const r=minimumFeasibility({monthly:200,initial:0,contributionYears:5},10000);assert.equal(r.reached,true);assert.equal(r.months,50);});

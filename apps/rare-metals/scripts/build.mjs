@@ -1,0 +1,4 @@
+import {cp,mkdir,rm,readFile,writeFile,readdir} from 'node:fs/promises';import {resolve,join} from 'node:path';import {createHash} from 'node:crypto';
+const root=resolve(import.meta.dirname,'..'),dist=join(root,'dist');await rm(dist,{recursive:true,force:true});await mkdir(dist,{recursive:true});
+for(const path of ['index.html','styles.css','src','data'])await cp(join(root,path),join(dist,path),{recursive:true});
+const files=[];async function scan(dir,prefix=''){for(const entry of await readdir(dir,{withFileTypes:true})){const p=join(dir,entry.name),rel=prefix+entry.name;if(entry.isDirectory())await scan(p,rel+'/');else{const b=await readFile(p);files.push({path:rel,bytes:b.length,sha256:createHash('sha256').update(b).digest('hex')});}}}await scan(dist);await writeFile(join(dist,'resource-manifest.json'),JSON.stringify({schemaVersion:1,app:'rare-metals',files},null,2));console.log(`Built Rare Metals Lab: ${files.length} resources`);

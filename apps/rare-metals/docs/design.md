@@ -1,0 +1,13 @@
+# Rare Metals Lab — design, 2026-11-12
+
+Build a static GitHub Pages research app within the existing App Studio. User intent: inspect all provider histories, choose a basket, invest EUR 100–200 monthly, compare holding periods and quantify conditional loss/profit probabilities. No guarantee or risk-free designation can be inferred.
+
+Architecture: buildless HTML/CSS/ES modules; pure numerical domain modules separated from data validation, Worker simulation and UI. No third-party runtime/chart dependencies. JSON public snapshots, original raw relative percentage observations, retrieval dates, SHA-256 provenance. EUR is default; USD comparison supported. Relative charts are indexed using 100 + cumulative percentage, not treated as absolute USD/kg prices. Retail quote snapshots remain separate and never spliced onto historical chart indexes.
+
+Approaches considered: native Sites hosting (does not meet explicit GitHub preference); a new GitHub repository (unnecessary deployment setup); existing App Studio subapp (selected by builder because prior apps already share working deployment). The user explicitly requested implementation and deployment; proceed within that authorization without an additional design gate.
+
+Features: full history charts and table/CSV/JSON export; coverage, staleness and trading restrictions; annual observed volatility, drawdown and start/end gains; editable allocations and inverse-volatility research basket excluding suspended/short histories; rolling monthly contribution backtests; correlated 3-month block bootstrap Monte Carlo, historical/half/zero-log-drift scenarios; reproducible seed and 5th/50th/95th percentiles; nominal/real profit, cash benchmark, horizon table and target threshold, never certainty. Include monthly contribution duration and subsequent hold to distinguish portfolio age from youngest-lot age.
+
+Fees are illustrative adjustable assumptions: additional purchase markup 0%, exit haircut 10%, annual storage 2%, inflation 2%, cash benchmark 2%, tax 0%. Known doobloo custody rate is 0.09% monthly, but SMI contract pricing unverified. Warn that reference history understates illiquidity, stale quotes, geopolitical and counterparty risk. No automatic tax-free claim. No purchase functionality or transmission of user data. Validated browser-local settings and portable JSON. Do not alter sibling apps.
+
+Tests: percentage-to-index handling; missing/gapped dates; fees on flat market; exact contribution timing; cash/inflation; DCA then hold; cross-metal dependence preserved; seeded determinism; no-data suppression; malformed import rejection. Build output and nested relative paths verified, then GitHub Actions production deployment checked.

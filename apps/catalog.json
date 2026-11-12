@@ -159,6 +159,25 @@
       "mode": "unavailable",
       "label": "Source unavailable",
       "description": "This salary-calculator project was registered without a saved source commit or published version. Its original implementation could not be recovered."
+    },
+    {
+      "slug": "rare-metals",
+      "title": "Rare Metals Lab",
+      "mode": "local",
+      "label": "Metals & investment risk",
+      "description": "Explore all 19 SMI metal histories, audit stale retail references, test monthly portfolios and correlated Monte Carlo scenarios with explicit costs and uncertainty.",
+      "output": "dist",
+      "commands": [
+        [
+          "npm",
+          "test"
+        ],
+        [
+          "npm",
+          "run",
+          "build"
+        ]
+      ]
     }
   ]
 }
